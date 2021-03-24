@@ -1,0 +1,97 @@
+#include
+#include
+#include
+//prototype
+void koor(int x , int y);
+void bersih();
+void delay(int sec);
+void setcolor(unsigned short color);
+void loading();
+void kalimat();
+void tembak();
+int main()
+{
+int panx,pany,button;
+loading();
+kalimat();
+nx = 28;
+pany = 13;
+do{
+tembak();
+koor(panx,pany);printf(“>>>”);
+button = getch();
+if(button == 77 && panx == 28){ //pindah kiri
+panx = 39;
+}
+else if(button == 75 && panx == 39){ //pindah kanan
+panx = 28;
+}
+}while(button != 13);
+//sesudah neken enter
+if(pany == 13 && panx == 28){ // mau
+bersih();
+koor(25,11);printf(“Alhamdulilah Sudah Gak Jomblo Lagi”);
+}else if(pany == 13 && panx == 39){ //tidak
+bersih();
+koor(22,11);printf(“ANYING DEMI UBUR-UBUR DI TOLAKKKK (((“);
+}
+getch();
+return 0;
+}
+//realisasi prototype
+void koor(int x , int y)
+{
+HANDLE h;
+COORD c;
+c.X = x;
+c.Y = y;
+h = GetStdHandle(STD_OUTPUT_HANDLE);
+SetConsoleCursorPosition(h,c);
+}
+void bersih()
+{
+system(“cls”);
+}
+void delay(int sec)
+{
+Sleep(sec);
+}
+void setcolor(unsigned short color){
+HANDLE hCon = GetStdHandle(STD_OUTPUT_HANDLE);
+SetConsoleTextAttribute(hCon,color);
+}
+void loading()
+{
+//kamus lokal
+int i;
+koor(33,11);printf(“H Y I T ‘ S M E”);
+koor(31,16);printf(“( don’t press any key )”);
+koor(26,14);
+for(i=1 ; i<=34 ; i++){ setcolor(3);printf(“%c”,219); Sleep(80); } } void kalimat() { int i; bersih(); setcolor(2); for(i=3 ; i>=1 ; i–){
+koor(39,12);printf(“%d”,i);
+delay(1000);
+bersih();
+}
+setcolor(7);
+koor(20,3);printf(“——————————————–“);
+koor(20,21);printf(“——————————————–“);
+delay(1000);
+koor(26,5);printf(“Dari dirimu kudapatkan “);delay(2000);
+koor(26,6);printf(“Arti cinta sejati”);delay(2000);
+koor(26,7);printf(“Setiap detik denganmu”);delay(2000);
+koor(26,9);printf(“Bersamamu kurasa bahagia”);delay(2000);
+koor(26,10);printf(“Senyumanmu membuatku meraja”);delay(2000);
+koor(26,11);printf(“Percayalah ku takan siakan”);delay(1000);
+koor(26,12);printf(“Dirimu”);delay(2000);
+koor(26,14);printf(“Kau yang kuinginkan”);delay(2000);
+koor(26,15);printf(“Hanyalah engkau”);delay(2000);
+koor(26,16);printf(“Bersamamu adalah hal yang terindah”);delay(2000);
+koor(26,17);printf(“Dan ku inginkan”);delay(2000);
+koor(35,19);printf(“D I R I M U …”);delay(3000);
+}
+void tembak()
+{
+bersih();
+koor(23,9);printf(“Maukah Kamu Menjadi Teman Hidupku ? “);
+koor(32,13);printf(“Mau”); koor(43,13);printf(“Enggak”);
+}
