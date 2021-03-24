@@ -6,15 +6,15 @@ let sender;
 if (url.searchParams.get('by') != null) {
   sender = url.searchParams.get('by');
 } else {
-  sender = "Adam";
+  sender = "Aziz";
 }
 
 let footer = document.getElementById("credit");
 footer.innerHTML = sender;
-footer.href = "https://www.instagram.com/adamukti/";
+footer.href = "https://www.instagram.com/azizfatkhu/";
 
 document.querySelector(".tombol").addEventListener('click', function () {
-  Swal.fire("Hallo Pacarku", "Aku ada pertanyaan nih buat kamu?", "question").then(function () {
+  Swal.fire("Hallo Byy", "Aku ada pertanyaan nih buat kamu?", "question").then(function () {
     Swal.fire("Jawab yang jujur ya!").then(function () {
       Swal.fire("Awas aja kalo boong!!", "", "error").then(function () {
 
@@ -68,7 +68,7 @@ document.querySelector(".tombol").addEventListener('click', function () {
                       if (result.isConfirmed) {
                         Swal.fire(`Huhu iya ${sender} juga kangen ${nama} :((`).then(function () {
                           Swal.fire('Terakhir deh sayang').then(function () {
-                            Swal.fire('Coba klik ikon hati di paling bawah dong')
+                            Swal.fire('Coba klik ikon hati di paling bawah dong, yang kecil itu loh dibawah' )
                           })
                         })
                       } else if (result.isDenied) {
